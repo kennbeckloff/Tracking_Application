@@ -18,6 +18,7 @@ class MembersController < ApplicationController
   # POST /members
   def create
     @member = Member.new(member_params)
+    @member.user_id=session[:user_id]
     # @member.project_id=Project.id
 
     if @member.save
